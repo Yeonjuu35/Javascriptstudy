@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <ul id="gnb"></ul>
+
+   <script>
+            const nav_data = [
+                                {
+                                    gnb_li_a : "회사소개",
+                                    gnb_li_href : "./conpany.html"
+                                },
+                                {
+                                    gnb_li_a : "제품소개",
+                                    gnb_li_href : "./product.html"
+                                },
+                                {
+                                    gnb_li_a : "커뮤니티",
+                                    gnb_li_href : "./board.html"
+                                }
+                            ]
+                            // document.body.innerHTML = nav_data[0].gnb_li_a;
+                            // document은 html 을 뜻함 / body와 header은 자바스크립트 안에 있지만 나머지는 id/class를 지정해서 불러주기
+                            document.querySelector("#gnb").innerHTML = `
+                            <li>${nav_data[0].gnb_li_a}</li>
+                            <li>${nav_data[1].gnb_li_a}</li>
+                            <li>${nav_data[2].gnb_li_a}</li>
+                            `;
+
+
+
+    </script>
+            
+</body>    
+
+    
+</html>
