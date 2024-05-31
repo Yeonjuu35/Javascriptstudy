@@ -27,12 +27,37 @@
                             ]
                             // document.body.innerHTML = nav_data[0].gnb_li_a;
                             // document은 html 을 뜻함 / body와 header은 자바스크립트 안에 있지만 나머지는 id/class를 지정해서 불러주기
-                            document.querySelector("#gnb").innerHTML = `
-                            <li>${nav_data[0].gnb_li_a}</li>
-                            <li>${nav_data[1].gnb_li_a}</li>
-                            <li>${nav_data[2].gnb_li_a}</li>
-                            `;
+                            // document.querySelector("#gnb").innerHTML = `
+                            // <li><a href="${nav_data[0].gnb_li_href}">${nav_data[0].gnb_li_a}</a></li>
+                            // <li><a href="${nav_data[1].gnb_li_href}">${nav_data[1].gnb_li_a}</a></li>
+                            // <li><a href="${nav_data[2].gnb_li_href}">${nav_data[2].gnb_li_a}</a></li>
+                            // `;
 
+                            // for문으로 구현
+                            // let mynavidb = "";
+                            // for(i in nav_data){
+                            //     mynavidb += `<li><a href="${}">
+                            //                               ${}</a></li>`
+                            // }
+
+                            const targetul = document.getElementById("gnb");
+                            // Element는 항상 const > 값이 하나밖에 없기 때문
+                            let gnblis = "";
+
+
+                            for(i in nav_data){
+                                gnblis += `<li>
+                                                <a href="${nav_data[i]["gnb_li_href"]}">
+                                                    ${nav_data[i]["gnb_li_a"]}
+                                                </a>
+                                           </li>`;
+                            }
+
+                            // targetul.innerHTML = nav_data[0]["gnb_li_a"];
+                            // array 안의 값이 -1이면 가장 끝의 값을 알려줌
+
+                            targetul.innerHTML = gnblis;
+                           
 
 
     </script>
