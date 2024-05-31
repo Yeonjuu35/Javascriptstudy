@@ -24,7 +24,11 @@
     const btns = document.querySelectorAll(".btns button"); // 집합체이기 때문에 중간에 포장을 풀어줘야함 > foreach
     btns.forEach(function(ele, idx){
         // console.log("태그" , ele, "순번", idx)
-        ele.addEventListener('click', function(){})
+        ele.addEventListener('click', function(){
+            console.log(this);
+            targetbox.innerHTML = this.dataset.text;
+            targetbox.style.backgroundColor = this.dataset.bg;
+        })
     })
     
   </script>
