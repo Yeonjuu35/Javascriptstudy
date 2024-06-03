@@ -12,7 +12,7 @@ const hd_yys ={
         {
         Text : "우리의미션",
         href : "misson.html",
-        cls : ["nav-mission me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
+        cls : ["nav-mission1 me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
         gnb_ul_li : [
             {
                 Text : "미션",
@@ -27,7 +27,7 @@ const hd_yys ={
     {
         Text : "정기배송",
         href : "misson.html",
-        cls : ["nav-mission me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
+        cls : ["nav-mission2 me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
         gnb_ul_li : [
             {
                 Text : "후기",
@@ -46,7 +46,7 @@ const hd_yys ={
     {
         Text : "싱싱마켓",
         href : "misson.html",
-        cls : ["nav-mission me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
+        cls : ["nav-mission3 me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
         gnb_ul_li : [
             {
                 Text : "인기상품",
@@ -61,7 +61,7 @@ const hd_yys ={
     {
         Text : "커뮤니티",
         href : "misson.html",
-        cls : ["nav-mission me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
+        cls : ["nav-mission4 me-5 gnb_li rel","d-block gnb_a","gnb_ul abs","gnb_ul_li"],
         gnb_ul_li : [
             {
                 Text : "오늘의레시피",
@@ -122,7 +122,11 @@ window.onload = function(){
 
     for(x in hd_yys.gnb){
         navitag += `
-        <li><a href="${hd_yys.gnb[x].href}">${hd_yys.gnb[x].Text}</a></li>
+        <li class="${hd_yys.gnb[x].cls[0]}">
+            <a class="${hd_yys.gnb[x].cls[1]}" href="${hd_yys.gnb[x].href}">${hd_yys.gnb[x].Text}</a>
+            <ul>
+            </ul>
+        </li>
         `;
     }
 
