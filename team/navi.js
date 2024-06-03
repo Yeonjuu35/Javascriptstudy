@@ -1,4 +1,7 @@
 const hd_yys ={
+    // 커뮤니티가 아닌 사이트는 로고를 잘 바꾸지 않아서 추가할 일이 없음
+    // 네이버처럼 그날의 컨셉에 맞춰 바꾸는게 아닌 이상 추가하지 않아도 괜찮
+    // 자주 바뀌는 종목이 아니면 추가하지 않아도 됨
     logo : {
         Text : "uglyus",
         href : "/uglyus/",
@@ -114,12 +117,16 @@ window.onload = function(){
     //     ${hd_yys.gnb[0].Text}
     //     </a>
     //     `;
-    
-    document.querySelector("#gnb li").innerHTML = `
-        <a href="${hd_yys["gnb"][0].href}">
-        ${hd_yys["gnb"][0].Text}
-        </a>
+
+    let navitag = "";
+
+    for(x in hd_yys.gnb){
+        navitag += `
+        <li><a href="${hd_yys.gnb[x].href}">${hd_yys.gnb[x].Text}</a></li>
         `;
+    }
+
+    document.querySelector("#gnb").innerHTML = navitag;
 }
 
 
