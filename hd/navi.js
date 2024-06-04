@@ -121,17 +121,27 @@ window.onload = function(){
     let navitag = "";
 
     for(x in hd_yys.gnb){
-        navitag += `
-        <li class="${hd_yys.gnb[x].cls[0]}">
-            <a class="${hd_yys.gnb[x].cls[1]}" href="${hd_yys.gnb[x].href}">${hd_yys.gnb[x].Text}</a>
-            <ul>
-            </ul>
-        </li>
-        `;
+        navitag += `<li class="${hd_yys.gnb[x].cls[0]}"> 
+            <a class="${hd_yys.gnb[x].cls[1]}" href="${hd_yys.gnb[x].href}">${hd_yys.gnb[x].Text}
+            </a>`;
+
+        if(hd_yys.gnb[x].gnb_ul_li.length > 0) navitag += `<ul>`;
+                for(j in hd_yys.gnb[x].gnb_ul_li){
+                    navitag += `<li>
+                    <a href="${hd_yys.gnb[x].gnb_ul_li[j].href}">${hd_yys.gnb[x].gnb_ul_li[j].Text}
+                    </a>
+                    </li>`
+                }
+        if(hd_yys.gnb[x].gnb_ul_li.length > 0) navitag += `</ul>`;
+        navitag += `</li>`;
     }
 
     document.querySelector("#gnb").innerHTML = navitag;
 }
+
+// console.log()
+
+// window.onload = function(){}
 
 
 // window.addEventListener('load', function(){})
@@ -139,3 +149,4 @@ window.onload = function(){
 // window.addEventListener('load', function(){}) 식은 이벤트가 주인공이 아님 
 // 'load'안에 다른 이벤트를 넣는게 가능
 // 하지만 window.onload = function(){}은 load에 중심을 맞춘 식이기 때문에 onload식은 이걸 많이 사용한다.
+
