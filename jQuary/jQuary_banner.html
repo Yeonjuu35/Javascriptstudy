@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
     <script>
         $(function(){
-            const aniwidth = $(".banner").width();
+            const aniWidth = $(".banner").width();
             // 괄호 안이 비어있으면 값을 가져오는거고 값이 있으면 그 값을 대입하는 것
-            $(".banner-slide").width(aniwidth);
+            $(".banner-slide").width(aniWidth);
             // $(".banner-wrapper").css("marginLeft",-aniwidth);
-            $(".banner-wrapper").animate({"marginLeft" : -aniwidth}, 400)
+            setInterval(function(){
+                $(".banner-wrapper").animate({ "marginLeft" : "-="+aniwidth }, 400)
+            }, 3000);
         })
     </script>
+
     <style>
         *{ margin: 0; padding: 0; }
         .banner{
