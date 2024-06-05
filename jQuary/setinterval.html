@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주기적으로 실행 setinterval</title>
+    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        // $(document).ready를 짧게 쓴게 $(function(){})
+        // 함수에 이름이 없는건 1회 즉각 실행을 위한것
+        $(function(){
+            const bglist = ["pink","red","gray","green"];
+            let count = 0;
+            // >n초 뒤에< n초마다 실행하겠단 의미.
+            setInterval(function(){
+                count++;
+                count = count % bglist.length;
+                $("body").css("background",bglist[count]); 
+            }, 3000);
+            $("body").css("background",bglist[count])
+            // setInterval이 n초 뒤에 실행하기 때문에 그 사이를 채워주기 위해 일회성으로 1번 실행
+        })
+    </script> -->
+</head>
+
+<body>
+    <div class="count">
+        0
+    </div>
+    <script>
+        let count = 0;
+        setInterval(function(){
+            count++
+            count %= 11;
+            document.querySelector(".count").innerHTML = count;
+        }, 1000);
+        // setInterval은 설정한 시간 뒤부터 시작하기 때문에 처음 시작할 내용은 html에서 적어주면 자바스크립트를 한줄 줄일 수 있다.
+    </script>
+</body>
+</html>

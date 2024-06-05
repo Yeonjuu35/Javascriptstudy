@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-none{
+            display: none;
+        }
+        .on a{
+            color: red;
+        }
+        #tab{
+            display: flex;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+            crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#tab li").click(function(){
+                const targetdiv = $(this).find('a').attr('href');
+                $(targetdiv).removeClass('d-none').siblings().addClass('d-none');
+                // $(#gnb).removeClass('d-none')
+                // $()안에 있는 태그, 여기서는 #gnb가 됨
+
+                // targetdiv.removeClass('d-none').siblings().addClass('d-none');
+                // "#gnb".removeClass('d-none')
+                // "#gnb" < ""안에 있기 때문에 문자(string)이 됨
+                $(this).addClass('on').siblings().removeClass('on');
+            })
+        })
+        // onload는 한번만 사용 가능하지만 document.ready는 모두 사용 가능
+        // 메서드 체인
+    </script>
+
+</head>
+
+<body>
+    <ul id="tab">
+        <li class="notice on"><a href="#notice">공지사항</a></li>
+        <li class="gallery"><a href="#gellery">갤러리</a></li>
+        <li class="qna"><a href="#qna">QnA</a></li>
+    </ul>
+    <div class="content">
+        <div id="notice">
+            공지사항컨텐츠
+        </div>
+        <div id="gellery" class="d-none">
+            갤러리컨텐츠
+        </div>
+        <div id="qna" class="d-none">
+            문의컨텐츠
+        </div>
+    </div>
+    <img src="" alt="">
+</body>
+</html>

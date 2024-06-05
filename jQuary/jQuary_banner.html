@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            const aniwidth = $(".banner").width();
+            // 괄호 안이 비어있으면 값을 가져오는거고 값이 있으면 그 값을 대입하는 것
+            $(".banner-slide").width(aniwidth);
+            // $(".banner-wrapper").css("marginLeft",-aniwidth);
+            $(".banner-wrapper").animate({"marginLeft" : -aniwidth}, 400)
+        })
+    </script>
+    <style>
+        *{ margin: 0; padding: 0; }
+        .banner{
+            overflow: hidden;
+        }
+        .banner-slide{
+            height: calc(100vh - 80px);
+            /* width: 100vw; */
+            /* width값을 주면 스크롤이 생김(뉴비) > 반드시 자바스크립트로 넣기 */
+        }
+        .bg0{
+            background-color: bisque;
+        }
+        .bg1{
+            background-color: aquamarine;
+        }
+        .bg2{
+            background-color: lightpink;
+        }
+        .banner-wrapper{
+            display: flex;
+            width: 1000000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-wrapper">
+            <div class="banner-slide bg0"></div>
+            <div class="banner-slide bg1"></div>
+            <div class="banner-slide bg2"></div>
+        </div>
+        <div class="banner-btn"></div>
+    </div>
+</body>
+</html>

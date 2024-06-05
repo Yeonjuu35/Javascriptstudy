@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리는 바닐라와 달리 인터페이스에 초점을 두고 개발된 것이라 디자인관점에 잘 맞춰져 있음</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        h2{
+            color: white;
+        }
+        p{
+            color: yellow;
+        }
+    </style>
+    <script>
+        // body 위쪽에 적었기 때문에 document.ready를 쓴 것
+        // 아래쪽에 적었다면 body를 읽고나서 script를 읽기 떄문에 $("body").css("background","red");만 써도 된다. > 위애서 아래로 순차적으로 읽음
+        // 아래에 적으면 태그가 길어질수록 수정하러 내려가기 귀찮기 때문에 위로 올려쓰고 $(document).ready(function(){}) 를 넣어준다.
+        // $(document).ready(function(){
+            // $("body").css("background","red").html("<h2>동적객체</h2>").html("<p>동적객체</p>");
+            // html이 두번 나오기 때문에 뒤에 적었던 태그만 적용됨 =를 다시 선언하는 느낌으로
+            // $("body").css("background","lightgray").html("<h2>동적객체</h2>").prepend("<p>동적객체</p>");
+        //     $("body").css("background","lightgray").html("<p></p>","<h2></h2>")
+        //     $("h2").css("color","blue");
+        //     $("p").css("color",$("h2").css("color"));
+        // })
+        $(document).ready(function(){
+            $("p").addClass("content").html("제이쿼리로 삽입하기")
+            $("h2").addClass("title").html("<span>동적</span>객체")
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p>동적객체</p>
+        <h2>동적객체</h2>
+    </div>
+</body>
+</html>
