@@ -12,8 +12,12 @@
             // 괄호 안이 비어있으면 값을 가져오는거고 값이 있으면 그 값을 대입하는 것
             $(".banner-slide").width(aniWidth);
             // $(".banner-wrapper").css("marginLeft",-aniwidth);
+
             setInterval(function(){
-                $(".banner-wrapper").animate({ "marginLeft" : "-="+aniwidth }, 400)
+                $(".banner-wrapper").animate({ "marginLeft" : "-="+aniWidth }, 400, function(){
+                    $(".banner-slide").eq(0).appendTo($(".banner-wrapper"));
+                    $(".banner-wrapper").css({ "marginLeft" : 0 })
+                })
             }, 3000);
         })
     </script>
@@ -26,7 +30,7 @@
         .banner-slide{
             height: calc(100vh - 80px);
             /* width: 100vw; */
-            /* width값을 주면 스크롤이 생김(뉴비) > 반드시 자바스크립트로 넣기 */
+            /* width값을 주면 스크롤이 생김 > 반드시 자바스크립트로 넣기 */
         }
         .bg0{
             background-color: bisque;
